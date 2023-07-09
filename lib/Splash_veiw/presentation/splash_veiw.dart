@@ -1,5 +1,6 @@
 
-import 'package:bookly_app/Splash/presentation/views/widgets/splash_view_body.dart';
+
+import 'package:bookly_app/Splash_veiw/presentation/view_models/views/widgets/splash_view_body.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatelessWidget {
