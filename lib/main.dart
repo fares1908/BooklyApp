@@ -1,4 +1,3 @@
-
 import 'package:bookly_app/CONSTANCE.dart';
 import 'package:bookly_app/Splash_veiw/presentation/splash_veiw.dart';
 import 'package:flutter/material.dart';
@@ -14,14 +13,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // title: 'Flutter Demo',
-      theme: ThemeData(
-     
-      ).copyWith(
-        scaffoldBackgroundColor: kPrimaryColor ,
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: kPrimaryColor,
       ),
       debugShowCheckedModeBanner: false,
-      home:const SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }
