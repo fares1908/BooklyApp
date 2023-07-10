@@ -13,7 +13,7 @@ class ListVeiwItem extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
-          image: const DecorationImage(
+          image:  DecorationImage(
             fit: BoxFit.cover,
        image: AssetImage(AssetsData.test)
           ),
