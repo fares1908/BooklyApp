@@ -1,3 +1,1 @@
-class AssetsData {
-  static const String log = 'assets/images/Logo.png';
-}
+9i876531
