@@ -12,17 +12,102 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: const [
-        CustomAppBar(),
-        FutureBooksListView(),
-        Text('Best Seller',
-        style: Styles.titleMedium
-        )
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 11),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          CustomAppBar(),
+          FutureBooksListView(),
+          Text('Best Seller', style: Styles.titleMedium),
+          SizedBox(
+            height: 20,
+          ),
+          BestSellerListViewItem(),
+
+        ],
+      ),
     );
   }
 }
+class BestSellerListViewItem extends StatelessWidget {
+  const BestSellerListViewItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      // height: MediaQuery.of(context).size.height * .2,
+      height: 125,
+      child: Row(
+        // crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          AspectRatio(
+            aspectRatio: 2.5 / 4,
+            child: Container(
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage(AssetsData.test),
+                      fit: BoxFit.cover)),
+            ),
+          ),
+          SizedBox(
+            width: 4,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+                vertical: 4
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children:  [
+                Text(
+                  'fraes',
+                  maxLines: 2,
+                ),
 
 
+                Text(
+                  'samy',
+                  style: TextStyle(color: Colors.grey),
+                ),
+
+                Row(
+
+                  children: [
+                    Text(
+                      '19,9 \$',
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold
+                      ),
+                    ),
+                    // Spacer(),
+                    Text(' rrrrr')
+                  ],
+                )
+
+                // Row(
+                //      // mainAxisAlignment: MainAxisAlignment.start,
+                //      // crossAxisAlignment: CrossAxisAlignment.start,
+                //      children: [
+                //        Text(
+                //          '19,9 \$',
+                //          style: TextStyle(
+                //            fontSize: 20,
+                //            fontWeight: FontWeight.bold
+                //          ),
+                //        ),
+                //        Spacer(),
+                //        Text('')
+                //      ],
+                //    ),
+
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
