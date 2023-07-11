@@ -13,17 +13,17 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 11),
+      padding: const EdgeInsets.symmetric(horizontal: 17),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CustomAppBar(),
-          FutureBooksListView(),
-          Text('Best Seller', style: Styles.textStyle18),
-          SizedBox(
+          const CustomAppBar(),
+          const FutureBooksListView(),
+          const Text('Best Seller', style: Styles.textStyle18),
+          const SizedBox(
             height: 20,
           ),
-          BestSellerListViewItem(),
+          const BestSellerListViewItem(),
 
         ],
       ),
@@ -44,67 +44,67 @@ class BestSellerListViewItem extends StatelessWidget {
           AspectRatio(
             aspectRatio: 2.5 / 4,
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage(AssetsData.test),
                       fit: BoxFit.cover)),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 4,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-                vertical: 4
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children:  [
-                Text(
-                  'fraes',
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children:  [
+             SizedBox(
+               width: MediaQuery.of(context).size.width*.5,
+               child: Text(
+                  'Harry Potter and the Goblet of Fire',
                   maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: Styles.textStyle20,
                 ),
+             ),
 
 
-                Text(
-                  'samy',
-                  style: TextStyle(color: Colors.grey),
-                ),
+              // const Text(
+              //   'samy',
+              //
+              // ),
 
-                Row(
+              Row(
 
-                  children: [
-                    Text(
-                      '19,9 \$',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold
-                      ),
+                children: [
+                  const Text(
+                    '19,9 \$',
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold
                     ),
-                    // Spacer(),
-                    Text(' rrrrr')
-                  ],
-                )
+                  ),
+                  // Spacer(),
+                  const Text(' rrrrr')
+                ],
+              )
 
-                // Row(
-                //      // mainAxisAlignment: MainAxisAlignment.start,
-                //      // crossAxisAlignment: CrossAxisAlignment.start,
-                //      children: [
-                //        Text(
-                //          '19,9 \$',
-                //          style: TextStyle(
-                //            fontSize: 20,
-                //            fontWeight: FontWeight.bold
-                //          ),
-                //        ),
-                //        Spacer(),
-                //        Text('')
-                //      ],
-                //    ),
+              // Row(
+              //      // mainAxisAlignment: MainAxisAlignment.start,
+              //      // crossAxisAlignment: CrossAxisAlignment.start,
+              //      children: [
+              //        Text(
+              //          '19,9 \$',
+              //          style: TextStyle(
+              //            fontSize: 20,
+              //            fontWeight: FontWeight.bold
+              //          ),
+              //        ),
+              //        Spacer(),
+              //        Text('')
+              //      ],
+              //    ),
 
-              ],
-            ),
+            ],
           )
         ],
       ),
