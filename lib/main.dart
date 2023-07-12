@@ -1,7 +1,8 @@
 import 'package:bookly_app/CONSTANCE.dart';
+import 'package:bookly_app/core/utils/routes.dart';
 import 'package:bookly_app/features/Splash_veiw/presentation/splash_veiw.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -14,14 +15,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp.router(
       theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: kPrimaryColor,
-        textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme)
-
-      ),
+          scaffoldBackgroundColor: kPrimaryColor,
+          textTheme:
+              GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme)),
+      routerConfig: AppRouter.router,
       debugShowCheckedModeBanner: false,
-      home: const SplashScreen(),
     );
   }
 }
+
