@@ -1,7 +1,9 @@
 import 'package:bookly_app/CONSTANCE.dart';
 import 'package:bookly_app/core/utils/assetsdata.dart';
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/features/Home/presentation/views/widgets/ListViewItem.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
   const BestSellerListViewItem({super.key});
@@ -51,13 +53,19 @@ class BestSellerListViewItem extends StatelessWidget {
                 height: 3,
               ),
 
-              Row(
-                children: [
-                  Text(
-                      '19,9 \$',
-                      style: Styles.textStyle20.copyWith(fontWeight: FontWeight.bold)
-                  ),
-                ],
+              SizedBox(
+                width: MediaQuery.of(context).size.width*.6,
+                child: Row(
+                  children: [
+                    Text(
+                        '19,9 \$',
+                        style: Styles.textStyle20.copyWith(fontWeight: FontWeight.bold)
+                    ),
+                    Spacer(),
+
+                   BookingRate(),
+                  ],
+                ),
               ),
 
             ],
