@@ -16,7 +16,8 @@ class ListViewItemImage extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
           image: DecorationImage(
-              fit: BoxFit.cover, image: AssetImage(AssetsData.test)),
+              fit: BoxFit.cover,
+              image: AssetImage(AssetsData.log)),
         ),
       ),
     );
