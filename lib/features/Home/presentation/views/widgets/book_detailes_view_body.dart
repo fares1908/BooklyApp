@@ -14,10 +14,11 @@ class BookDetailsViewBody extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Column(
+
           children: [
             CustomBookDetailsAppBar(),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*.23),
+              padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*.26),
               child: ListViewItemImage(),
             ),
             SizedBox(
@@ -39,6 +40,12 @@ class BookDetailsViewBody extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(
+              height: 18,
+            ),
+            SizedBox(
+              width: 120,
+                child: BookingRate()),
           ],
         ),
       ),

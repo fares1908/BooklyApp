@@ -33,6 +33,7 @@ class BookingRate extends StatelessWidget {
       children: [
         Icon(
           FontAwesomeIcons.solidStar,
+          size: 14,
           color: Color(0xffFFDD4F),
         ),
         SizedBox(
