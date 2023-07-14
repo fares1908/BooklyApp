@@ -11,13 +11,13 @@ class ListViewItemImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 2.4 / 4,
+      aspectRatio: 2.5 / 4,
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
           image: DecorationImage(
               fit: BoxFit.cover,
-              image: AssetImage(AssetsData.log)),
+              image: AssetImage(AssetsData.test)),
         ),
       ),
     );
