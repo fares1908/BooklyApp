@@ -56,13 +56,14 @@ class BookDetailsViewBody extends StatelessWidget {
                 BookAction(),
                 Expanded(
                   child: SizedBox(
-                    height: 18,
+                    height: 1,
                   ),
                 ),
                 Align(
                   alignment: Alignment.topLeft,
                   child: Text(
-                      'You can also like'
+                      'You can also like',
+                    style: Styles.textStyle18,
                   ),
                 ),
                 SizedBox(
