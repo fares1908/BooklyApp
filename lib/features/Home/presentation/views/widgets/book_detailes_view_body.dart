@@ -13,64 +13,74 @@ class BookDetailsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: Column(
-          children: [
-            CustomBookDetailsAppBar(),
-            Padding(
-              padding: EdgeInsets.symmetric(
-                  horizontal: MediaQuery.of(context).size.width * .3),
-              child: ListViewItemImage(),
-            ),
-            SizedBox(
-              height: 25,
-            ),
-            Text(
-              'The Jungle Book',
-              style: Styles.textStyle30,
-            ),
-            SizedBox(
-              height: 6,
-            ),
-            Opacity(
-              opacity: .7,
-              child: Text(
-                'Rudyard Kipling',
-                style: Styles.textStyle18.copyWith(
-                    fontStyle: FontStyle.italic, fontWeight: FontWeight.w500),
-              ),
-            ),
-            SizedBox(
-              height: 18,
-            ),
-            SizedBox(width: 120, child: BookingRate()),
-            SizedBox(
-              height: 32,
-            ),
-            BookAction(),
-            SizedBox(
-              height: 18,
-            ),
-             Align(
-               alignment: Alignment.topLeft,
-               child: Text(
-                 'You can also like'
-               ),
-             ),
-            SizedBox(
-              height: 18,
-            ),
-            SimilarBooksListview(),
-            SizedBox(
-              height: 28,
-            ),
+    return   CustomScrollView(
+      slivers: [
 
-          ],
-        ),
-      ),
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Column(
+              children: [
+                CustomBookDetailsAppBar(),
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).size.width * .3),
+                  child: ListViewItemImage(),
+                ),
+                SizedBox(
+                  height: 25,
+                ),
+                Text(
+                  'The Jungle Book',
+                  style: Styles.textStyle30,
+                ),
+                SizedBox(
+                  height: 6,
+                ),
+                Opacity(
+                  opacity: .7,
+                  child: Text(
+                    'Rudyard Kipling',
+                    style: Styles.textStyle18.copyWith(
+                        fontStyle: FontStyle.italic, fontWeight: FontWeight.w500),
+                  ),
+                ),
+                SizedBox(
+                  height: 18,
+                ),
+                SizedBox(width: 120, child: BookingRate()),
+                SizedBox(
+                  height: 32,
+                ),
+                BookAction(),
+                Expanded(
+                  child: SizedBox(
+                    height: 18,
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                      'You can also like'
+                  ),
+                ),
+                SizedBox(
+                  height: 18,
+                ),
+                SimilarBooksListview(),
+                SizedBox(
+                  height: 28,
+                ),
+
+              ],
+            ),
+          ),
+        )
+
+      ],
     );
+
   }
 }
 // class CustomButton extends StatelessWidget {
