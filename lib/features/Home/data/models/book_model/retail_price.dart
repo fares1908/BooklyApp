@@ -18,4 +18,5 @@ class RetailPrice extends Equatable {
 
   @override
   List<Object?> get props => [amount, currencyCode];
+  //ss
 }

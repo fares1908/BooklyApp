@@ -16,6 +16,7 @@ class PanelizationSummary extends Equatable {
     );
   }
 
+
   Map<String, dynamic> toJson() => {
         'containsEpubBubbles': containsEpubBubbles,
         'containsImageBubbles': containsImageBubbles,
