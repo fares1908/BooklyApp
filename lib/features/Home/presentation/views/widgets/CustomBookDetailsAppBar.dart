@@ -8,10 +8,10 @@ class CustomBookDetailsAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: [IconButton(onPressed: () {}, icon: Icon(Icons.close)),
+      children: [
+        IconButton(onPressed: () {}, icon: Icon(Icons.close)),
         Spacer(),
         IconButton(onPressed: () {}, icon: Icon(Icons.shopping_cart)),
-
       ],
     );
   }

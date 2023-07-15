@@ -9,7 +9,7 @@ class FeaturedListViewBestSeller extends StatelessWidget {
     return SizedBox(
       // height: MediaQuery.of(context).size.height * .44,
       child: ListView.separated(
-        shrinkWrap: true,
+          shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) => const BestSellerListViewItem(),
           separatorBuilder: (context, index) {

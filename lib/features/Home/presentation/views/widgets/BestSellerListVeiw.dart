@@ -27,8 +27,7 @@ class BestSellerListViewItem extends StatelessWidget {
               child: Container(
                 decoration: const BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage(AssetsData.test),
-                        fit: BoxFit.cover)),
+                        image: AssetImage(AssetsData.test), fit: BoxFit.cover)),
               ),
             ),
             const SizedBox(
@@ -37,14 +36,15 @@ class BestSellerListViewItem extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children:  [
+              children: [
                 SizedBox(
-                  width: MediaQuery.of(context).size.width*.5,
+                  width: MediaQuery.of(context).size.width * .5,
                   child: Text(
                     'Harry Potter and the Goblet of Fire',
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: Styles.textStyle20.copyWith(fontFamily: kGtSectraFine),
+                    style:
+                        Styles.textStyle20.copyWith(fontFamily: kGtSectraFine),
                   ),
                 ),
                 SizedBox(
@@ -53,27 +53,22 @@ class BestSellerListViewItem extends StatelessWidget {
                 Text(
                   'j.k Rowling',
                   style: Styles.textStyle14.copyWith(color: Colors.grey),
-
                 ),
                 SizedBox(
                   height: 3,
                 ),
-
                 SizedBox(
-                  width: MediaQuery.of(context).size.width*.6,
+                  width: MediaQuery.of(context).size.width * .6,
                   child: Row(
                     children: [
-                      Text(
-                          '19,9 \$',
-                          style: Styles.textStyle20.copyWith(fontWeight: FontWeight.bold)
-                      ),
+                      Text('19,9 \$',
+                          style: Styles.textStyle20
+                              .copyWith(fontWeight: FontWeight.bold)),
                       Spacer(),
-
-                     BookingRate(),
+                      BookingRate(),
                     ],
                   ),
                 ),
-
               ],
             )
           ],

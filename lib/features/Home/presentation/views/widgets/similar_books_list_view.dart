@@ -1,4 +1,3 @@
-
 import 'package:bookly_app/features/Home/presentation/views/widgets/ListViewItem.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -8,11 +7,10 @@ class SimilarBooksListview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height*.2,
+      height: MediaQuery.of(context).size.height * .2,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-
-        itemBuilder: (context, index) =>   const ListViewItemImage(),
+        itemBuilder: (context, index) => const ListViewItemImage(),
       ),
     );
   }

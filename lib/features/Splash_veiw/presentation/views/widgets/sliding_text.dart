@@ -11,9 +11,8 @@ class SlidingText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-      animation:slidingAnimation ,
+      animation: slidingAnimation,
       builder: (BuildContext context, Widget? child) {
-
         return SlideTransition(
           position: slidingAnimation,
           child: const Text(

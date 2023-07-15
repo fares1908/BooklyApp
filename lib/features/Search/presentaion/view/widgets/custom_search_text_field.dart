@@ -8,10 +8,8 @@ class CustomSearchTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       decoration: InputDecoration(
-
         border: buildOutlineInputBorder(),
-
-        focusedBorder:  buildOutlineInputBorder(),
+        focusedBorder: buildOutlineInputBorder(),
         hintText: 'Search',
         suffixIcon: IconButton(
           onPressed: () {},
