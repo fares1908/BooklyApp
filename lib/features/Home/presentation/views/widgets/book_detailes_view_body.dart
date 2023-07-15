@@ -4,7 +4,9 @@ import 'package:bookly_app/core/widgets/custom_button.dart';
 import 'package:bookly_app/features/Home/presentation/views/widgets/BookAction.dart';
 import 'package:bookly_app/features/Home/presentation/views/widgets/CustomBookDetailsAppBar.dart';
 import 'package:bookly_app/features/Home/presentation/views/widgets/ListViewItem.dart';
+import 'package:bookly_app/features/Home/presentation/views/widgets/SimilarBooksSection.dart';
 import 'package:bookly_app/features/Home/presentation/views/widgets/book_detailes_view_body.dart';
+import 'package:bookly_app/features/Home/presentation/views/widgets/booke_detailse_section.dart';
 import 'package:bookly_app/features/Home/presentation/views/widgets/similar_books_list_view.dart';
 import 'package:flutter/material.dart';
 
@@ -23,55 +25,20 @@ class BookDetailsViewBody extends StatelessWidget {
             child: Column(
               children: [
                 CustomBookDetailsAppBar(),
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: MediaQuery.of(context).size.width * .3),
-                  child: ListViewItemImage(),
-                ),
-                SizedBox(
-                  height: 25,
-                ),
-                Text(
-                  'The Jungle Book',
-                  style: Styles.textStyle30,
-                ),
-                SizedBox(
-                  height: 6,
-                ),
-                Opacity(
-                  opacity: .7,
-                  child: Text(
-                    'Rudyard Kipling',
-                    style: Styles.textStyle18.copyWith(
-                        fontStyle: FontStyle.italic, fontWeight: FontWeight.w500),
-                  ),
-                ),
-                SizedBox(
-                  height: 18,
-                ),
-                SizedBox(width: 120, child: BookingRate()),
+                BookDetailsSection(),
+
                 SizedBox(
                   height: 32,
                 ),
                 BookAction(),
                 Expanded(
                   child: SizedBox(
-                    height: 1,
+                    height: 50,
                   ),
                 ),
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                      'You can also like',
-                    style: Styles.textStyle18,
-                  ),
-                ),
+               SimilarBooksSection(),
                 SizedBox(
-                  height: 18,
-                ),
-                SimilarBooksListview(),
-                SizedBox(
-                  height: 28,
+                  height: 38,
                 ),
 
               ],
