@@ -8,8 +8,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
-
+  const BestSellerListViewItem({super.key, required this.imageUrl});
+ final String imageUrl;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -25,14 +25,17 @@ class BestSellerListViewItem extends StatelessWidget {
             AspectRatio(
               aspectRatio: 2.5 / 4,
               child: Container(
-                decoration: const BoxDecoration(
+                decoration:  BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage(AssetsData.test), fit: BoxFit.cover)),
+                        image:NetworkImage(imageUrl)
+                ),
               ),
+            ),
             ),
             const SizedBox(
               width: 4,
             ),
+
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,6 +75,7 @@ class BestSellerListViewItem extends StatelessWidget {
               ],
             )
           ],
+
         ),
       ),
     );

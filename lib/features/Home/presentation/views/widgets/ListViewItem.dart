@@ -4,10 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ListViewItemImage extends StatelessWidget {
-  const ListViewItemImage({
+  ListViewItemImage({
     super.key,
+    required this.imageUrl,
   });
-
+  final String imageUrl;
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
@@ -16,7 +17,8 @@ class ListViewItemImage extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
           image: DecorationImage(
-              fit: BoxFit.cover, image: AssetImage(AssetsData.test)),
+              fit: BoxFit.cover, image: NetworkImage(imageUrl),
+          )
         ),
       ),
     );

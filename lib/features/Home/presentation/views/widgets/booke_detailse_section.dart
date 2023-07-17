@@ -12,7 +12,8 @@ class BookDetailsSection extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(
               horizontal: MediaQuery.of(context).size.width * .3),
-          child: ListViewItemImage(),
+          child: ListViewItemImage(
+              imageUrl: 'https://image.cnbcfm.com/api/v1/image/107168566-1671481983597-gettyimages-1450398458-mj1_4451_ce4b38b2-9f26-404e-b214-cf8454d82d0f.jpeg?v=1671482283&w=740&h=416&ffmt=webp&vtcrop=y'),
         ),
         SizedBox(
           height: 25,

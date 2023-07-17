@@ -16,23 +16,25 @@ class FutureBooksListView extends StatelessWidget {
       builder: (context, state) {
         if (state is FeaturedBooksSuccess) {
           return SizedBox(
-            height: MediaQuery
-                .of(context)
-                .size
-                .height * .3,
+            height: MediaQuery.of(context).size.height * .3,
             child: ListView.builder(
+              physics: BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) => const ListViewItemImage(),
+              itemBuilder: (context, index) => Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ListViewItemImage(
+                  imageUrl: state.books[index].volumeInfo.imageLinks!.thumbnail
+                ),
+              ),
+              itemCount: state.books.length,
             ),
           );
-        }
-        else if (state is FeaturedBooksError) {
+        } else if (state is FeaturedBooksError) {
           return CustomErrorWidget(errorMessage: state.message);
-        }else{
-          return  const CustomLoadingIndicator();
+        } else {
+          return const CustomLoadingIndicator();
         }
       },
     );
   }
-
 }
