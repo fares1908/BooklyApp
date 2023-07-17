@@ -20,9 +20,8 @@ class HomeRepoImpl implements HomeRepo {
       }
       return right(books);
     } catch (e) {
-      if(e is DioError){
+      if (e is DioError) {
         return left(ServerError.fromDioError(e));
-
       }
       return left(ServerError(e.toString()));
     }
@@ -39,11 +38,10 @@ class HomeRepoImpl implements HomeRepo {
       }
       return right(books);
     } catch (e) {
-     if(e is DioError){
+      if (e is DioError) {
         return left(ServerError.fromDioError(e));
-
-     }
-     return left(ServerError(e.toString()));
+      }
+      return left(ServerError(e.toString()));
     }
   }
 }
