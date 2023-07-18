@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/widgets/ShimmerFeatureBiiks.dart';
 import 'package:bookly_app/core/widgets/custom_error_widget.dart';
 import 'package:bookly_app/core/widgets/custom_loading_indicator.dart';
 import 'package:bookly_app/features/Home/presentation/manger/feature_books/featured_books_cubit.dart';
@@ -32,7 +33,7 @@ class FutureBooksListView extends StatelessWidget {
         } else if (state is FeaturedBooksError) {
           return CustomErrorWidget(errorMessage: state.message);
         } else {
-          return const CustomLoadingIndicator();
+          return const ShimmerFutureBooksListView();
         }
       },
     );

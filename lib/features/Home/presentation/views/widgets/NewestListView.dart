@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/widgets/ShimmerNewestBooks.dart';
 import 'package:bookly_app/core/widgets/custom_error_widget.dart';
 import 'package:bookly_app/core/widgets/custom_loading_indicator.dart';
 import 'package:bookly_app/features/Home/data/models/book_model/book_model.dart';
@@ -8,7 +9,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ListViewBestSeller extends StatelessWidget {
-  const ListViewBestSeller({super.key,});
+  const ListViewBestSeller({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,19 +21,22 @@ class ListViewBestSeller extends StatelessWidget {
           return ListView.separated(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              itemBuilder: (context, index) =>NewestListViewItem(bookModel:state.books[index])
-                ,
+              itemBuilder: (context, index) =>
+                  NewestListViewItem(bookModel: state.books[index]),
               separatorBuilder: (context, index) {
-                return  SizedBox(
+                return SizedBox(
                   height: 15,
                 );
               },
-              itemCount: state.books.length
-          );
+              itemCount: state.books.length);
         } else if (state is NewestBooksError) {
           return CustomErrorWidget(errorMessage: state.errorMessage);
         } else {
-          return const CustomLoadingIndicator();
+          return
+            SizedBox(
+              height: MediaQuery.of(context).size.height*3,
+                child: const ShimmerNewestBooks()
+            );
         }
       },
     );

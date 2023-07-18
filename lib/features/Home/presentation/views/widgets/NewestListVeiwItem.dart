@@ -27,20 +27,17 @@ class NewestListViewItem extends StatelessWidget {
         child: Row(
           // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(16),
-                child: AspectRatio(
-                    aspectRatio: 2.5 / 4,
-                    child: CachedNetworkImage(
-                      imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail,
-                      fit: BoxFit.fill,
-                    )),
-              ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(16),
+              child: AspectRatio(
+                  aspectRatio: 2.5 / 4,
+                  child: CachedNetworkImage(
+                    imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail,
+                    fit: BoxFit.fill,
+                  )),
             ),
             const SizedBox(
-              width: 4,
+              width: 20,
             ),
             Expanded(
               child: Column(
@@ -48,7 +45,6 @@ class NewestListViewItem extends StatelessWidget {
                 children: [
                   SizedBox(
                     width: MediaQuery.of(context).size.width * .5,
-                    child: Expanded(
                       child: Text(
                         '${bookModel.volumeInfo.title}',
                         maxLines: 2,
@@ -56,36 +52,30 @@ class NewestListViewItem extends StatelessWidget {
                         style: Styles.textStyle20
                             .copyWith(fontFamily: kGtSectraFine),
                       ),
-                    ),
+
                   ),
-                  SizedBox(height: MediaQuery.of(context).size.height * .01),
-                  Expanded(
-                    child: Text(
-                      '${bookModel.volumeInfo.publisher}',
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: Styles.textStyle14.copyWith(color: Colors.grey),
-                    ),
+                  const SizedBox(height: 10),
+                  Text(
+                    '${bookModel.volumeInfo.publisher}',
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: Styles.textStyle14.copyWith(color: Colors.grey),
                   ),
                   SizedBox(
-                    height: 3,
+                    height: 10,
                   ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                        vertical: MediaQuery.of(context).size.height * .02),
-                    child: Row(
-                      children: [
-                        Text(
-                          'Free',
-                          style: Styles.textStyle16.copyWith(
-                              fontWeight: FontWeight.bold, color: Colors.grey),
-                        ),
-                        const Spacer(),
-                        BookingRate(
-                            rating: bookModel.volumeInfo.maturityRating!,
-                            count: bookModel.volumeInfo.pageCount!),
-                      ],
-                    ),
+                  Row(
+                    children: [
+                      Text(
+                        'Free',
+                        style: Styles.textStyle16.copyWith(
+                            fontWeight: FontWeight.bold, color: Colors.grey),
+                      ),
+                      const Spacer(),
+                      BookingRate(
+                          rating: bookModel.volumeInfo.maturityRating!,
+                          count: bookModel.volumeInfo.pageCount!),
+                    ],
                   ),
                 ],
               ),
