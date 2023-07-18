@@ -20,7 +20,7 @@ class ListViewItemImage extends StatelessWidget {
             imageUrl: imageUrl,
         fit: BoxFit.fill,
           errorWidget: (context, url, error) => const Icon(Icons.error),
-          progressIndicatorBuilder: (context, url, progress) => Center(child: const CircularProgressIndicator())
+          progressIndicatorBuilder: (context, url, progress) => const Center(child: CircularProgressIndicator())
         )
       ),
     );
@@ -28,8 +28,9 @@ class ListViewItemImage extends StatelessWidget {
 }
 
 class BookingRate extends StatelessWidget {
-  const BookingRate({super.key});
-
+  const BookingRate({super.key, required this.rating, required this.count});
+ final String rating;
+ final int count;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -43,13 +44,13 @@ class BookingRate extends StatelessWidget {
           width: 6.3,
         ),
         Text(
-          '4.8',
+          '0',
           style: Styles.textStyle16,
         ),
         SizedBox(
           width: 5,
         ),
-        Text('(245)',
+        Text('($count)',
             style: Styles.textStyle14.copyWith(color: Color(0xff707070))),
       ],
     );

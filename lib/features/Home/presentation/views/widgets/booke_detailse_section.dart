@@ -36,7 +36,10 @@ class BookDetailsSection extends StatelessWidget {
         SizedBox(
           height: 18,
         ),
-        SizedBox(width: 120, child: BookingRate()),
+        SizedBox(width: 120, child: BookingRate(
+          count: 33,
+          rating: 'ee',
+        )),
       ],
     );
   }

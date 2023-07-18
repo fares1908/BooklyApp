@@ -1,8 +1,8 @@
 import 'package:bookly_app/CONSTANCE.dart';
 import 'package:bookly_app/core/utils/assetsdata.dart';
 import 'package:bookly_app/core/utils/styles.dart';
-import 'package:bookly_app/features/Home/presentation/views/widgets/BestSellerListVeiw.dart';
-import 'package:bookly_app/features/Home/presentation/views/widgets/FeaturedListViewBestSeller.dart';
+import 'package:bookly_app/features/Home/presentation/views/widgets/NewestListVeiwItem.dart';
+import 'package:bookly_app/features/Home/presentation/views/widgets/NewestListView.dart';
 import 'package:bookly_app/features/Home/presentation/views/widgets/ListViewItem.dart';
 import 'package:bookly_app/features/Home/presentation/views/widgets/customAppBar.dart';
 import 'package:bookly_app/features/Home/presentation/views/widgets/featured_list_veiw.dart';
@@ -16,6 +16,7 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
+      physics: BouncingScrollPhysics(),
       slivers: [
         SliverToBoxAdapter(
           child: Padding(
@@ -39,7 +40,7 @@ class HomeViewBody extends StatelessWidget {
         SliverToBoxAdapter(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 17),
-            child: FeaturedListViewBestSeller(),
+            child: ListViewBestSeller(),
           ),
         ),
       ],
