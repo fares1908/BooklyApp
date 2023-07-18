@@ -1,5 +1,6 @@
 import 'package:bookly_app/core/utils/assetsdata.dart';
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -11,15 +12,16 @@ class ListViewItemImage extends StatelessWidget {
   final String imageUrl;
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 2.5 / 4,
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
-          image: DecorationImage(
-              fit: BoxFit.cover, image: NetworkImage(imageUrl),
-          )
-        ),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(16),
+      child: AspectRatio(
+        aspectRatio: 2.5 / 4,
+        child: CachedNetworkImage(
+            imageUrl: imageUrl,
+        fit: BoxFit.fill,
+          errorWidget: (context, url, error) => const Icon(Icons.error),
+          progressIndicatorBuilder: (context, url, progress) => Center(child: const CircularProgressIndicator())
+        )
       ),
     );
   }

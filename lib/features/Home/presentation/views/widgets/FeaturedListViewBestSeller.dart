@@ -16,7 +16,7 @@ class FeaturedListViewBestSeller extends StatelessWidget {
           child: ListView.separated(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              itemBuilder: (context, index) =>  BestSellerListViewItem(imageUrl: state ),
+              itemBuilder: (context, index) =>  BestSellerListViewItem(),
               separatorBuilder: (context, index) {
                 return Container(
                   width: double.infinity,
