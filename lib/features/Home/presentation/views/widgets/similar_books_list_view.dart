@@ -1,20 +1,49 @@
+import 'package:bookly_app/core/widgets/ShimmeSimilarBook.dart';
+import 'package:bookly_app/core/widgets/custom_error_widget.dart';
+import 'package:bookly_app/core/widgets/custom_loading_indicator.dart';
+import 'package:bookly_app/features/Home/presentation/manger/similars_books/similar_books_cubit.dart';
+import 'package:bookly_app/features/Home/presentation/manger/similars_books/similar_books_cubit.dart';
 import 'package:bookly_app/features/Home/presentation/views/widgets/ListViewItem.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../../../../core/utils/routes.dart';
 
 class SimilarBooksListview extends StatelessWidget {
   const SimilarBooksListview({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * .2,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) =>  Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: ListViewItemImage(imageUrl: 'https://image.cnbcfm.com/api/v1/image/107168566-1671481983597-gettyimages-1450398458-mj1_4451_ce4b38b2-9f26-404e-b214-cf8454d82d0f.jpeg?v=1671482283&w=740&h=416&ffmt=webp&vtcrop=y '),
-        ),
-      ),
+    return BlocBuilder<SimilarBooksCubit, SimilarBooksState>(
+      builder: (context, state) {
+        if (state is SimilarBookSuccess) {
+          return SizedBox(
+            height: MediaQuery.of(context).size.height * .15,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) => Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 5,
+                ),
+                child: GestureDetector(
+                  onTap: () {
+                    GoRouter.of(context).push(AppRouter.kDetailsView,extra: state.books[index]);
+                  },
+                  child: ListViewItemImage(
+                      imageUrl:
+                          state.books[index].volumeInfo.imageLinks!.thumbnail),
+                ),
+              ),
+              itemCount: state.books.length,
+            ),
+          );
+        } else if (state is SimilarBooksError) {
+          return CustomErrorWidget(errorMessage: state.errorMessage);
+        } else {
+          return  ShimmerSimilarBooksListView();
+        }
+      },
     );
   }
 }

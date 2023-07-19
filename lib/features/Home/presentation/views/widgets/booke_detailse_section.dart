@@ -1,10 +1,11 @@
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/features/Home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/Home/presentation/views/widgets/ListViewItem.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsSection extends StatelessWidget {
-  const BookDetailsSection({super.key});
-
+  const BookDetailsSection({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -13,14 +14,16 @@ class BookDetailsSection extends StatelessWidget {
           padding: EdgeInsets.symmetric(
               horizontal: MediaQuery.of(context).size.width * .3),
           child: ListViewItemImage(
-              imageUrl: 'https://image.cnbcfm.com/api/v1/image/107168566-1671481983597-gettyimages-1450398458-mj1_4451_ce4b38b2-9f26-404e-b214-cf8454d82d0f.jpeg?v=1671482283&w=740&h=416&ffmt=webp&vtcrop=y'),
+            imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail,
+          ),
         ),
         SizedBox(
           height: 25,
         ),
         Text(
-          'The Jungle Book',
+          '${bookModel.volumeInfo.title}',
           style: Styles.textStyle30,
+          textAlign: TextAlign.center,
         ),
         SizedBox(
           height: 6,
@@ -28,7 +31,7 @@ class BookDetailsSection extends StatelessWidget {
         Opacity(
           opacity: .7,
           child: Text(
-            'Rudyard Kipling',
+            '${bookModel.volumeInfo.publisher}',
             style: Styles.textStyle18.copyWith(
                 fontStyle: FontStyle.italic, fontWeight: FontWeight.w500),
           ),
@@ -36,10 +39,12 @@ class BookDetailsSection extends StatelessWidget {
         SizedBox(
           height: 18,
         ),
-        SizedBox(width: 120, child: BookingRate(
-          count: 33,
-          rating: 'ee',
-        )),
+        SizedBox(
+            width: 120,
+            child: BookingRate(
+              count: bookModel.volumeInfo.pageCount!,
+              rating: '0',
+            )),
       ],
     );
   }
