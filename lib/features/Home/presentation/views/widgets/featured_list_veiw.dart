@@ -5,6 +5,9 @@ import 'package:bookly_app/features/Home/presentation/manger/feature_books/featu
 import 'package:bookly_app/features/Home/presentation/views/widgets/ListViewItem.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../../../../core/utils/routes.dart';
 
 class FutureBooksListView extends StatelessWidget {
   const FutureBooksListView({
@@ -23,8 +26,13 @@ class FutureBooksListView extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) => Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: ListViewItemImage(
-                  imageUrl: state.books[index].volumeInfo.imageLinks!.thumbnail
+                child: GestureDetector(
+                  onTap: () {
+                    GoRouter.of(context).push(AppRouter.kDetailsView,extra: state.books[index]);
+                  },
+                  child: ListViewItemImage(
+                    imageUrl: state.books[index].volumeInfo.imageLinks!.thumbnail
+                  ),
                 ),
               ),
               itemCount: state.books.length,
