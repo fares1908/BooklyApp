@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:bookly_app/features/Search/data/repositories/search_repo.dart';
 import 'package:equatable/equatable.dart';
 
+import '../../../../../core/widgets/ShimmerSearchResult.dart';
 import '../../../../Home/data/models/book_model/book_model.dart';
 import '../../../data/models/search_model.dart';
 
@@ -18,10 +19,9 @@ class SearchCubit extends Cubit<SearchState> {
     searchModel = searchModel.copyWith(searchText: searchText);
   }
 
-  Future<void> getResultSearch(
-
-  ) async {
+  Future<void> getResultSearch() async {
     emit(SearchILoading());
+    const ShimmerSearchResult();
     var result = await searchRepo.fetchSearch(searchModel);
     result.fold((failure) {
       emit(SearchError(failure.errMessage));
