@@ -73,7 +73,7 @@ class NewestListViewItem extends StatelessWidget {
                       ),
                       const Spacer(),
                       BookingRate(
-                          rating: bookModel.volumeInfo.maturityRating!,
+                          rating: '0',
                           count: bookModel.volumeInfo.pageCount!),
                     ],
                   ),
