@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/widgets/ShimmerSearchResult.dart';
 import 'package:bookly_app/core/widgets/custom_error_widget.dart';
 import 'package:bookly_app/features/Search/presentaion/manger/search_books/search_cubit.dart';
 import 'package:bookly_app/features/Search/presentaion/view/widgets/search_listview_item.dart';
@@ -47,12 +48,13 @@ class SearchResultListView extends StatelessWidget {
                 itemCount: state.books.length);
           } else if(state is SearchError){
             return CustomErrorWidget(errorMessage: state.errorMessage);
-          }else {
-            // return ListView.builder(
-            //   scrollDirection: ,
-            //     itemBuilder:(context, index) => ,
-            // );
-            return const Center(child: CircularProgressIndicator());
+          }else if(state is SearchILoading){
+             return const ShimmerSearchResult();
+            // return ShimmerSearchResult();
+          }else{
+            return Center(child: Text('Enter what want to search',
+            style: Styles.textStyle20.copyWith(fontWeight:FontWeight.bold),
+            ));
           }
         },
       ),
