@@ -20,7 +20,6 @@ class SearchViewBody extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Column(
-
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomSearchTextField(),
@@ -35,11 +34,8 @@ class SearchViewBody extends StatelessWidget {
             height: 15,
           ),
           Expanded(child: SearchResultSection())
-
         ],
       ),
     );
   }
 }
-
-
