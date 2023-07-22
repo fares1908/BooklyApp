@@ -15,7 +15,7 @@ class ShimmerSimilarBooksListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * .28,
+      height: MediaQuery.of(context).size.height * .16,
       child: ListView.builder(
           physics: BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
@@ -29,8 +29,8 @@ class ShimmerSimilarBooksListView extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16)
                   ),
                   child: Container(
-                    height: 126,
-                    width: 78.1,
+                    height:60,
+                    width: 60.1,
                   ),
                 )
             );
