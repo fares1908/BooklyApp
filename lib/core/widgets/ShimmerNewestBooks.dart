@@ -80,7 +80,7 @@ class ShimmerNewestBooks extends StatelessWidget {
                               )),
 
                           SizedBox(
-                         width: MediaQuery.of(context).size.width*.3,
+                         width: MediaQuery.of(context).size.width*.23,
                           ),
                           Shimmer.fromColors(
                               highlightColor:Colors.grey ,
