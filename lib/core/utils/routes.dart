@@ -29,12 +29,12 @@ abstract class AppRouter {
         builder: (context, state) => const HomeScreen(),
       ),
       GoRoute(
-        path: kSearchView,
+        path: '/searchView',
         builder: (context, state) => BlocProvider(
           create: (context) => SearchCubit(
-            getIt.get<SearchRepoImpl>()
+             getIt.get<SearchRepoImpl>()
           ),
-          child: SearchView(bookModel: state.extra as BookModel,),
+          child: const SearchView(),
         ),
       ),
       GoRoute(
