@@ -34,7 +34,7 @@ abstract class AppRouter {
           create: (context) => SearchCubit(
             getIt.get<SearchRepoImpl>()
           ),
-          child: SearchView(),
+          child: SearchView(bookModel: state.extra as BookModel,),
         ),
       ),
       GoRoute(
