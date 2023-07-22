@@ -6,8 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../Home/data/models/book_model/book_model.dart';
 
 class SearchView extends StatefulWidget {
-  const SearchView({super.key, required this.bookModel});
-  final BookModel bookModel;
+  const SearchView({super.key});
 
   @override
   State<SearchView> createState() => _SearchViewState();
@@ -16,18 +15,16 @@ class SearchView extends StatefulWidget {
 class _SearchViewState extends State<SearchView> {
   @override
   void initState() {
-    BlocProvider.of<SearchCubit>(context).get_search();
+    BlocProvider.of<SearchCubit>(context).getResultSearch();
     super.initState();
   }
-
 
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
       body: SafeArea(
-        child: SearchViewBody(bookModel:bookModel),
+        child: SearchViewBody(),
       ),
     );
   }
-
 }
