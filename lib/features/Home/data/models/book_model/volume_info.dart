@@ -50,8 +50,8 @@ class VolumeInfo extends Equatable {
 
   factory VolumeInfo.fromJson(Map<String, dynamic> json) => VolumeInfo(
         title: json['title'] as String? ?? "",
-        authors: (json['authors'] as List<dynamic>?)?.cast<String>(),
-        publisher: json['publisher'] as String?,
+        authors: json['authors'] != null ? List<String>.from(json['authors']) : List.empty(),
+        publisher: json['publisher'] as String? ?? "I don'\t know the publisher",
         publishedDate: json['publishedDate'] as String?,
         description: json['description'] as String?,
         pageCount: json['pageCount'] as int?,
