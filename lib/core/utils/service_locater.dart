@@ -1,6 +1,7 @@
 import 'package:bookly_app/core/utils/api_services.dart';
 import 'package:bookly_app/features/Home/data/repositories/home_repo_imple.dart';
 import 'package:bookly_app/features/Home/data/repositories/home_repo_imple.dart';
+import 'package:bookly_app/features/Search/data/repositories/search_repo_imple.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
@@ -11,4 +12,6 @@ void setup() {
   getIt.registerSingleton<HomeRepoImpl>(HomeRepoImpl(
     getIt.get<ApiServices>(),
   ));
+  getIt.registerSingleton<SearchRepoImpl>(
+      SearchRepoImpl(getIt.get<ApiServices>()));
 }
