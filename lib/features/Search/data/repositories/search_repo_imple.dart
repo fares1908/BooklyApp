@@ -15,6 +15,7 @@ class SearchRepoImpl implements SearchRepo{
   @override
   Future<Either<Failure, List<BookModel>>> fetchSearch(SearchModel searchModel)async {
     try {
+
       var data = await apiServices.get(
           endPoint:'?q=${searchModel.searchText}&orderBy=newest');
       // endPoint:'?q=computer&orderBy=newest');
