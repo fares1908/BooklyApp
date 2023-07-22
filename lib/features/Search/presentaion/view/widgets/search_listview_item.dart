@@ -18,21 +18,17 @@ class SearchListViewItem extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(16),
-            
-            
             child: AspectRatio(
                 aspectRatio: 2.5 / 4.5,
                 child: CachedNetworkImage(
-                  fit: BoxFit.cover,
-                    imageUrl: bookModel
-                        .volumeInfo.imageLinks!.thumbnail)),
+                    fit: BoxFit.cover,
+                    imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail)),
           ),
           const SizedBox(
             width: 15,
           ),
           SizedBox(
-      width: MediaQuery.of(context).size.width*.6
-            ,
+            width: MediaQuery.of(context).size.width * .6,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,8 +39,8 @@ class SearchListViewItem extends StatelessWidget {
                     '${bookModel.volumeInfo.title}',
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: Styles.textStyle20
-                        .copyWith(fontFamily: kGtSectraFine),
+                    style:
+                        Styles.textStyle20.copyWith(fontFamily: kGtSectraFine),
                   ),
                 ),
                 SizedBox(
@@ -52,8 +48,7 @@ class SearchListViewItem extends StatelessWidget {
                 ),
                 Text(
                   '${bookModel.volumeInfo.publisher}',
-                  style: Styles.textStyle14
-                      .copyWith(color: Colors.grey),
+                  style: Styles.textStyle14.copyWith(color: Colors.grey),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -65,9 +60,8 @@ class SearchListViewItem extends StatelessWidget {
                   child: Row(
                     children: [
                       Text('Free',
-                          style: Styles.textStyle20.copyWith(
-                              fontWeight: FontWeight.bold)),
-
+                          style: Styles.textStyle20
+                              .copyWith(fontWeight: FontWeight.bold)),
                     ],
                   ),
                 ),
