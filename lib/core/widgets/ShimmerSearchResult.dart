@@ -41,7 +41,6 @@ class ShimmerSearchResult extends StatelessWidget {
                             highlightColor: Colors.grey,
                             baseColor: Colors.grey,
                             child: Card(
-
                               child: Container(
                                 height: 20,
                                 width: 25,
@@ -65,7 +64,6 @@ class ShimmerSearchResult extends StatelessWidget {
                           highlightColor: Colors.grey,
                           baseColor: Colors.grey,
                           child: Card(
-
                             child: Container(
                               height: 14,
                               width: MediaQuery.of(context).size.width * .12,

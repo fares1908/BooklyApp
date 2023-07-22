@@ -23,7 +23,10 @@ class _SearchViewState extends State<SearchView> {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: SafeArea(
-        child: SearchViewBody(),
+        child: Padding(
+          padding: EdgeInsets.all(8.0),
+          child: SearchViewBody(),
+        ),
       ),
     );
   }

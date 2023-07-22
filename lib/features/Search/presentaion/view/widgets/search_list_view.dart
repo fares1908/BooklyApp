@@ -53,7 +53,7 @@ class SearchResultListView extends StatelessWidget {
             // return ShimmerSearchResult();
           }else{
             return Center(child: Text('Enter what want to search',
-            style: Styles.textStyle20.copyWith(fontWeight:FontWeight.bold),
+            style: Styles.textStyle20.copyWith(fontWeight:FontWeight.bold,color: Colors.grey),
             ));
           }
         },

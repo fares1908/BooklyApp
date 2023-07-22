@@ -36,7 +36,7 @@ class ShimmerNewestBooks extends StatelessWidget {
                   width: 20,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top:34 ),
+                  padding: const EdgeInsets.only(top:12 ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -46,15 +46,12 @@ class ShimmerNewestBooks extends StatelessWidget {
                             highlightColor:Colors.grey ,
                             baseColor: Colors.grey,
                             child: Card(
-                              shape: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(16)
-                              ),
                               child: Container(
-                                height: 2,
-                               width: 25,
+                                height: 20,
+                                width: 25,
                               ),
-                            )
-                        ),
+                            )),
+
 
                       ),
                       const SizedBox(height: 10),
@@ -62,44 +59,44 @@ class ShimmerNewestBooks extends StatelessWidget {
                           highlightColor:Colors.grey ,
                           baseColor: Colors.grey,
                           child: Card(
-                            shape: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(16)
-                            ),
                             child: Container(
-                              height: 2,
-                              width: 25,
+                              height: 15,
+                              width: MediaQuery.of(context).size.width * .2,
                             ),
                           )
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Shimmer.fromColors(
-                          highlightColor:Colors.grey ,
-                          baseColor: Colors.grey,
-                          child: Card(
-                            shape: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(16)
-                            ),
-                            child: Container(
-                              height: 2,
-                              width:MediaQuery.of(context).size.width*.4,
-                            ),
+                      )
+            ,
+
+                      Row(
+                        children: [
+                          Shimmer.fromColors(
+                              highlightColor:Colors.grey ,
+                              baseColor: Colors.grey,
+                              child:  Card(
+                                child: Container(
+                                  height: 14,
+                                  width: MediaQuery.of(context).size.width * .12,
+                                ),
+                              )),
+
+                          SizedBox(
+                         width: MediaQuery.of(context).size.width*.3,
+                          ),
+                          Shimmer.fromColors(
+                              highlightColor:Colors.grey ,
+                              baseColor: Colors.grey,
+                              child: Card(
+                                child: Container(
+                                  height: 15,
+                                  width: MediaQuery.of(context).size.width * .2,
+                                ),
+                              )
                           )
+
+
+                        ],
                       ),
-                      // Row(
-                      //   children: [
-                      //     Text(
-                      //       'Free',
-                      //       style: Styles.textStyle16.copyWith(
-                      //           fontWeight: FontWeight.bold, color: Colors.grey),
-                      //     ),
-                      //     const Spacer(),
-                      //     BookingRate(
-                      //         rating: bookModel.volumeInfo.maturityRating!,
-                      //         count: bookModel.volumeInfo.pageCount!),
-                      //   ],
-                      // ),
+
                     ],
                   ),
                 )
