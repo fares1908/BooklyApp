@@ -29,8 +29,8 @@ class ShimmerSimilarBooksListView extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16)
                   ),
                   child: Container(
-                    height:60,
-                    width: 60.1,
+                    height:53,
+                    width: 73.1,
                   ),
                 )
             );
